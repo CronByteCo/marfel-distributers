@@ -7,8 +7,6 @@ use App\Repositories\AbstractEloquentRepository;
 
 class EloquentUserRepository extends AbstractEloquentRepository implements UserRepositoryInterface
 {
-    protected $model;
-
     public function __construct(User $model)
     {
         $this->model = $model;

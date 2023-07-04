@@ -7,8 +7,6 @@ use App\Repositories\AbstractEloquentRepository;
 
 class EloquentProductRepository extends AbstractEloquentRepository implements ProductRepositoryInterface
 {
-    protected $model;
-
     public function __construct(Product $model)
     {
         $this->model = $model;

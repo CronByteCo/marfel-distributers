@@ -8,11 +8,11 @@ abstract class AbstractEloquentRepository
     
     public function all()
     {
-        $this->model->all();
+        return $this->model->all();
     }
 
     public function find($id)
     {
-        $this->model->find($id);
+        return $this->model->find($id);
     }
 }

@@ -7,8 +7,6 @@ use App\Repositories\AbstractEloquentRepository;
 
 class EloquentDistributorRepository extends AbstractEloquentRepository implements DistributorRepositoryInterface
 {
-    protected $model;
-
     public function __construct(Distributor $model)
     {
         $this->model = $model;

@@ -7,8 +7,6 @@ use App\Repositories\AbstractEloquentRepository;
 
 class EloquentOrderRepository extends AbstractEloquentRepository implements OrderRepositoryInterface
 {
-    protected $model;
-
     public function __construct(Order $model)
     {
         $this->model = $model;
