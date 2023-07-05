@@ -19,15 +19,19 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1"
-                                value="{{ $product->stock_in }}">
+                            <input wire:model="quantity" type="number" class="form-control"
+                                id="exampleFormControlInput1" value="">
+                            @error('quantity')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="d-flex justify-content-between">
                             <a type="button"
                                 href="{{ route('categories.show', ['category' => $product->category_id]) }}"
                                 class="btn btn-primary">Back</a>
-                            <a type="button" class="btn btn-primary">Place Order</a>
+                            <a type="button" wire:click="addToCart({{ $product->id }})" class="btn btn-primary">Place
+                                Order</a>
                         </div>
                     </div>
                 </div>

@@ -61,6 +61,11 @@
                     </ul>
 
                     <ul class="nav col-12 col-lg-auto mb-2 mx-2 justify-content-center mb-md-0">
+                        <li>
+                            @if (!request()->routeIs('cart'))
+                                <livewire:cart.show />
+                            @endif
+                        </li>
                         <li><a href="{{ route('categories') }}" class="nav-link px-2 text-white">Categories</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">List</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">Orders</a></li>
@@ -78,6 +83,25 @@
         </main>
     </div>
     @livewireScripts
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        window.addEventListener('swal', function(e) {
+            Swal.fire({
+                icon: e.detail.icon,
+                title: e.detail.title,
+                text: e.detail.text,
+                html: e.detail.html,
+                width: e.detail.hasOwnProperty('width') ? e.detail.width : 400,
+                confirmButtonColor: '#1B3B31',
+                timer: e.detail.hasOwnProperty('timer') ? e.detail.width : 3000,
+                timerProgressBar: true,
+            });
+        });
+    </script>
+
+    @stack('scripts')
 </body>
 
 </html>
