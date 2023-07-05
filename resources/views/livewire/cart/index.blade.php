@@ -28,7 +28,7 @@
                                 </div>
                                 <span class="text-muted">
                                     <p class="mb-0">Price</p>
-                                    {{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($item['price'] * $item['quantity'], 'USD') }}
+                                    {{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($item['price'], 'USD') }}
                                 </span>
                                 <span class="text-muted">
                                     <p class="mb-0">Subtotal</p>

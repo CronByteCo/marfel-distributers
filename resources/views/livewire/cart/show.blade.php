@@ -13,13 +13,13 @@
             <ul class="list-group">
                 @foreach ($content as $id => $item)
                     <li class="list-group-item  d-flex align-items-center justify-content-between lh-sm">
-                        <div class="px-2">
+                        <div class="px-2 text-nowrap">
                             <h6 class="my-0">{{ $item['name'] }}</h6>
                             <span>{{ $item['quantity'] }}x</span>
                         </div>
                         <span class="px-5 text-muted">
                             <p class="mb-0">Price</p>
-                            {{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($item['price'] * $item['quantity'], 'USD') }}
+                            {{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($item['price'], 'USD') }}
                         </span>
                         <span class="px-5 text-muted">
                             <p class="mb-0">Subtotal</p>
