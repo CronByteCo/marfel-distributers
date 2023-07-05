@@ -66,9 +66,9 @@
                             @if (Route::has('login'))
                                 <a type="button" href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
                             @endif
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <a type="button" href="{{ route('register') }}" class="btn btn-warning">Sign-up</a>
-                            @endif
+                            @endif --}}
                         </div>
                     @else
                         <ul class="nav col-12 col-lg-auto mb-2 mx-2 justify-content-center mb-md-0">
