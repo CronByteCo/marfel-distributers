@@ -15,11 +15,27 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'name' => 'delata',
-            'code' => 'ERASDF',
+            'name' => 'Face mask',
+            'code' => 'B012',
             'price' => 5,
-            'stock_in' => 1,
-            'image' => 'default.png',
+            'stock_in' => 100,
+            'image' => 'face_mask.jpg',
+            'category_id' => Category::first()->id,
+        ]);
+        Product::create([
+            'name' => 'Full Face Visor',
+            'code' => 'B013',
+            'price' => 50,
+            'stock_in' => 200,
+            'image' => 'full_face_visor.jpg',
+            'category_id' => Category::first()->id,
+        ]);
+        Product::create([
+            'name' => 'Sanitizer',
+            'code' => 'B014',
+            'price' => 5,
+            'stock_in' => 40,
+            'image' => 'sanitizer.jpg',
             'category_id' => Category::first()->id,
         ]);
     }

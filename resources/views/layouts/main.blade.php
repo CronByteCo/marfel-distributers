@@ -61,7 +61,7 @@
                     </ul>
 
                     <ul class="nav col-12 col-lg-auto mb-2 mx-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-2 text-white">Categories</a></li>
+                        <li><a href="{{ route('categories') }}" class="nav-link px-2 text-white">Categories</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">List</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">Orders</a></li>
                     </ul>
