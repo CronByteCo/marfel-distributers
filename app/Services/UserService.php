@@ -36,12 +36,9 @@ class UserService
         return $this->userRepository->updateByUsername($username, $data);
     }
 
-    public function authenticate($username, $password)
+    public function authenticate($credentials)
     {
-        if (Auth::attempt([
-            'username' => $username,
-            'password' => $password
-        ])) {
+        if (Auth::attempt($credentials)) {
             return true;
         }
 
