@@ -26,8 +26,17 @@ class EloquentOrderRepository extends AbstractEloquentRepository implements Orde
             ] + $data),
             function (Order $order) use ($cartService) {
 
+                $date = Carbon::now();
                 foreach ($cartService->content() as $item) {
-                    $order->products()->attach($item['id']);
+                    $order->products()->attach(
+                        $item['id'],
+                        [
+                            'quantity' => $item['quantity'],
+                            'price' => $item['price'],
+                            'created_at' => $date,
+                            'updated_at' => $date
+                        ]
+                    );
                 }
             }
         );
