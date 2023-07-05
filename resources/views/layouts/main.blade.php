@@ -23,6 +23,39 @@
 <body>
     <div id="app">
 
+        <header class="px-3 bg-white">
+            <div class="">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img src="{{ asset('images/logo.png') }}" width="150" alt="">
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mx-2 justify-content-center mb-md-0">
+                        {{-- <li>{{ Auth::user()->email }}</li> --}}
+                        {{-- <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li> --}}
+                    </ul>
+
+                    <div>
+                        <a type="button" href="{{ route('logout') }}"
+                            class="d-inline-flex align-items-center btn btn-outline-danger me-2"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-power" viewBox="0 0 16 16">
+                                <path d="M7.5 1v7h1V1h-1z" />
+                                <path
+                                    d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
+                            </svg>
+                            <span class="mx-2">Logout</span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
         <header class="p-3 bg-dark text-white">
             <div class="">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -33,7 +66,7 @@
                             {{-- {{ Auth::user()->username }} --}}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -43,7 +76,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -56,7 +89,7 @@
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mx-2 justify-content-center mb-md-0">
-                        <li>{{ Auth::user()->email }}</li>
+                        <li>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</li>
                         {{-- <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li> --}}
                     </ul>
 
