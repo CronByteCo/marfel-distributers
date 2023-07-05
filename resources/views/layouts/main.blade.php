@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100" style="background-color: #e9ecef">
 
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body class="d-flex flex-column h-100" style="background-color: #e9ecef">
     <div id="app">
 
         <header class="px-3 bg-white">
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </header>
-        <header class="p-3 bg-dark text-white">
+        <header class="p-3 text-white" style="background-color:#315061;">
             <div class="">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
@@ -99,7 +99,7 @@
                                 <livewire:cart.show />
                             @endif
                         </li>
-                        <li><a href="{{ route('categories') }}" class="nav-link px-2 text-white">Categories</a></li>
+                        <li><a href="{{ route('categories') }}" class="nav-link px-2 {{ request()->routeIs('categories') ? 'text-warning' : 'text-white' }}">Categories</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">List</a></li>
                         <li><a href="#" class="nav-link px-2 text-white">Orders</a></li>
                     </ul>
@@ -114,6 +114,12 @@
         <main class="py-4">
             {{ $slot }}
         </main>
+
+        <footer class="footer fixed-bottom mt-auto py-3" style="background-color:#315061;">
+            <div class="container">
+                <span class="text-warning"> Marfel Group &copy; <script>document.write(new Date().getFullYear())</script></span>
+            </div>
+        </footer>
     </div>
     @livewireScripts
 
