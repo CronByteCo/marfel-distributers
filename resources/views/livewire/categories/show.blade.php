@@ -16,7 +16,8 @@
                     @foreach ($products as $item)
                         <tr>
                             <td>
-                                <img src="{{ asset('/images/products\/') . $item->image }}" width="50" height="50" alt="">
+                                <img src="{{ asset('/images/products\/') . $item->image }}" width="50" height="50"
+                                    alt="">
                             </td>
                             <td>
                                 {{ $item->code }}
@@ -25,7 +26,7 @@
                                 {{ $item->name }}
                             </td>
                             <td>
-                                {{ $item->price }}
+                                {{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($item->price, 'USD') }}
                             </td>
                             <td>
                                 {{ $item->stock_in }}

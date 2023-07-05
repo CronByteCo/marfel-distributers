@@ -33,6 +33,12 @@ class Show extends Component
         return view('livewire.cart.show');
     }
 
+    public function removeFromCart(string $id): void
+    {
+        $this->cartService->remove($id);
+        $this->updateCart();
+    }
+
     public function updateCart()
     {
         $this->total = $this->cartService->total();
