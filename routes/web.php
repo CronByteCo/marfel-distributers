@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Categories\Index as CategoryIndex;
 use App\Http\Livewire\Categories\Show as CategoryShow;
+use App\Http\Livewire\Products\Show as ProductShow;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,5 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/categories', CategoryIndex::class)->name('categories');
     Route::get('/categories/{category}', CategoryShow::class)->name('categories.show');
+    Route::get('/products/{product}', ProductShow::class)->name('products.show');
 });

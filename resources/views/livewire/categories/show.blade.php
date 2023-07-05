@@ -31,7 +31,7 @@
                                 {{ $item->stock_in }}
                             </td>
                             <td>
-                                <a href="#">Order</a>
+                                <a href="{{ route('products.show', ['product' => $item->id]) }}">Order</a>
                             </td>
                         </tr>
                     @endforeach
