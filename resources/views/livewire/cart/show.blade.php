@@ -42,6 +42,7 @@
                     <strong>{{ (new NumberFormatter('en_US', NumberFormatter::CURRENCY))->formatCurrency($total, 'USD') }}</strong>
                 </li>
             </ul>
+            <a type="button" href="{{ route('cart') }}" class="btn btn-primary mt-3 d-md-block">Checkout</a>
         </ul>
     </div>
 </div>
