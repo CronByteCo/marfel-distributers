@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Product Details</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10">{{ $product->description }}
+                            <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="10">{{ $product->description }}
                             </textarea>
                         </div>
                         <div class="mb-3">
