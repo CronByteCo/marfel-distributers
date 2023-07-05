@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Categories;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Repositories\Product\ProductRepositoryInterface;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -19,9 +20,9 @@ class Show extends Component
         $this->category = $category;
     }
 
-    public function render()
+    public function render(ProductRepositoryInterface $productRepository)
     {
-        $products = Product::where('category_id', $this->category->id)->paginate(10);
+        $products = $productRepository->allPaginatedByCategory($this->category->id);
         return view('livewire.categories.show', compact('products'));
     }
 }

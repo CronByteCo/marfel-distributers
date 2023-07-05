@@ -12,13 +12,8 @@ class EloquentProductRepository extends AbstractEloquentRepository implements Pr
         $this->model = $model;
     }
 
-    public function create(array $data)
+    public function allPaginatedByCategory($categoryId)
     {
-    }
-    public function update(array $data, Product $user)
-    {
-    }
-    public function delete(Product $user)
-    {
+        return Product::where('category_id', $categoryId)->paginate(10);
     }
 }
