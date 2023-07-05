@@ -18,4 +18,9 @@ class Order extends Model
         'shipped_date',
         'received_date',
     ];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

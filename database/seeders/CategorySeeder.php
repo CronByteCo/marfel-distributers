@@ -17,27 +17,27 @@ class CategorySeeder extends Seeder
         $faker = Factory::create();
         Category::create([
             'name'=> 'Covid Supplies',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Category::create([
             'name'=> 'Office Supplies',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Category::create([
             'name'=> 'Stationery Products',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Category::create([
             'name'=> 'Greeting Cards',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Category::create([
             'name'=> 'Gifts',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Category::create([
             'name'=> 'School Bags',
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
     }
 }

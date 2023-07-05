@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             'stock_in' => 100,
             'image' => 'face_mask.jpg',
             'category_id' => Category::first()->id,
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Product::create([
             'name' => 'Full Face Visor',
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
             'stock_in' => 200,
             'image' => 'full_face_visor.jpg',
             'category_id' => Category::first()->id,
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
         Product::create([
             'name' => 'Sanitizer',
@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
             'stock_in' => 40,
             'image' => 'sanitizer.jpg',
             'category_id' => Category::first()->id,
-            'description' => $faker->paragraph(),
+            'description' => $faker->text(255),
         ]);
     }
 }
