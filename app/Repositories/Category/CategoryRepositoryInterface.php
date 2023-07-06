@@ -6,4 +6,5 @@ interface CategoryRepositoryInterface
 {
     public function all();
     public function find($id);
+    public function getAllCategories();
 }

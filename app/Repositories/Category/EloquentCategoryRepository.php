@@ -11,4 +11,9 @@ class EloquentCategoryRepository extends AbstractEloquentRepository implements C
     {
         $this->model = $model;
     }
+
+    public function getAllCategories()
+    {
+        return $this->model->all();
+    }
 }
